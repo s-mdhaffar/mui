@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from '@mui/material';
+import { Add, Settings } from '@mui/icons-material';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App () {
+	return (
+		<div>
+			<Button endIcon={<Add />} variant="text" color="success">
+				Add New
+			</Button>
+			<Button startIcon={<Settings />} variant="contained" color="secondary" size="small">
+				Settings
+			</Button>
+			<Button variant="outlined" disabled>
+				Outlined
+			</Button>
+			<Button
+				variant="contained"
+				sx={{
+					color           : '#888',
+					backgroundColor : 'skyblue',
+					'&:hover'       : {
+						backgroundColor : '#888'
+					}
+				}}
+			>
+				MY Button
+			</Button>
+		</div>
+	);
 }
 
 export default App;
