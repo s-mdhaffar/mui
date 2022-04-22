@@ -1,31 +1,18 @@
-import { Button } from '@mui/material';
-import { Add, Settings } from '@mui/icons-material';
+import Sidebar from './components/Sidebar';
+import Feed from './components/Feed';
+import Rightbar from './components/Rightbar';
+import { Stack } from '@mui/material';
+import { Box } from '@mui/system';
 
 function App () {
 	return (
-		<div>
-			<Button endIcon={<Add />} variant="text" color="success">
-				Add New
-			</Button>
-			<Button startIcon={<Settings />} variant="contained" color="secondary" size="small">
-				Settings
-			</Button>
-			<Button variant="outlined" disabled>
-				Outlined
-			</Button>
-			<Button
-				variant="contained"
-				sx={{
-					color           : '#888',
-					backgroundColor : 'skyblue',
-					'&:hover'       : {
-						backgroundColor : '#888'
-					}
-				}}
-			>
-				MY Button
-			</Button>
-		</div>
+		<Box>
+			<Stack direction="row" spacing={2} justifyContent="space-between">
+				<Sidebar />
+				<Feed />
+				<Rightbar />
+			</Stack>
+		</Box>
 	);
 }
 
